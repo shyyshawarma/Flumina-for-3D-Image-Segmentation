@@ -1,0 +1,32 @@
+dataset: AMOS-2022
+project_root: ../..
+raw_root: raw/AMOS-2022
+output_root: data/AMOS-2022
+split_root: splits/AMOS-2022
+reference_manifest: splits/AMOS-2022/reference.json
+image_pattern: imagesTr/{case_id}_0000.nii.gz
+label_pattern: labelsTr/{case_id}.nii.gz
+target_spacing:
+- 2.0
+- 0.712890625
+- 0.712890625
+reader: nibabel_reorient
+normalization: ZScoreNormalization
+intensity_properties: null
+use_mask_for_norm: false
+image_order: 3
+label_order: 1
+separate_axis_order: 0
+anisotropy_threshold: 3
+chunks:
+- 64
+- 64
+- 64
+blocks:
+- 16
+- 16
+- 16
+compression: LZ4HC
+compression_level: 8
+verify_reference: true
+case_paths: {}

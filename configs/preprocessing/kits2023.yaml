@@ -1,0 +1,36 @@
+dataset: KiTS-2023
+project_root: ../..
+raw_root: raw/KiTS-2023
+output_root: data/KiTS-2023
+split_root: splits/KiTS-2023
+reference_manifest: splits/KiTS-2023/reference.json
+image_pattern: imagesTr/{case_id}_0000.nii.gz
+label_pattern: labelsTr/{case_id}.nii.gz
+target_spacing:
+- 1.0
+- 0.78125
+- 0.78125
+reader: nibabel_reorient
+normalization: CTNormalization
+intensity_properties:
+  mean: 103.13636779785156
+  std: 73.34317779541016
+  percentile_00_5: -58.0
+  percentile_99_5: 302.0
+use_mask_for_norm: false
+image_order: 3
+label_order: 1
+separate_axis_order: 0
+anisotropy_threshold: 3
+chunks:
+- 16
+- 64
+- 64
+blocks:
+- 16
+- 16
+- 16
+compression: LZ4HC
+compression_level: 8
+verify_reference: true
+case_paths: {}

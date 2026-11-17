@@ -1,0 +1,34 @@
+dataset: BraTS-2025-GLI
+project_root: ../..
+raw_root: raw/BraTS-2025-GLI
+output_root: data/BraTS-2025-GLI
+split_root: splits/BraTS-2025-GLI
+workers: 1
+sources:
+  postoperative_additional_training: training_data_additional
+  postoperative_training: training_data1_v2
+  postoperative_validation: validation_data
+  preoperative_training: BraTS2025-GLI-PRE-Challenge-TrainingData
+  preoperative_validation: BraTS2025-GLI-PRE-Challenge-ValidationData
+processing:
+  channel_order: [t2f, t1c, t1n, t2w]
+  label_values: [0, 1, 2, 3, 4]
+  minimum_size: 128
+storage:
+  backend: b2nd
+  blosc2_version: 4.1.2
+  codec: LZ4HC
+  clevel: 8
+  chunk_spatial: 64
+  block_spatial: 16
+  support_bitorder: little
+  foreground_dtype: uint32
+case_table_sha256: 726f328dd49f616427171df6873b825c074d3fa6e5be246f58365fd94d712eb4
+split_sha256:
+  train: 415c8a8cd34dfae86848515e82a9620e05d4bd0b28bc3e30f5d04ef60e0633dd
+  val: 69afb6bd3840c3a9859dce7a98f173798a696d211341a5dc145c9f204158cccc
+  test: c6d3a1a8a3c827fbd894dbabcb39704ff1af8c47491c5e9ac2da8f83c7eaf100
+  labeled: 5e29da771a0bcd7eeda503742acbaf1f6a99cd105f51632816cfb348138066ed
+  unlabeled: d02ec66d254404206160df958948ed30622e9f3b18420633f2b567a1b901a9f8
+  test_preoperative: 591d116017ea70972938f5689636ca360ee14e5bc41cb17e3114d1578eec3479
+  test_postoperative: 2857248223ca014f6afcbe836a3a4ccf40079bffac6c8c4b97a5dff694c294fb

@@ -1,0 +1,36 @@
+dataset: LiTS
+project_root: ../..
+raw_root: raw/LiTS
+output_root: data/LiTS
+split_root: splits/LiTS
+reference_manifest: splits/LiTS/reference.json
+image_pattern: imagesTr/{case_id}_0000.nii.gz
+label_pattern: labelsTr/{case_id}.nii.gz
+target_spacing:
+- 1.0
+- 0.767578125
+- 0.767578125
+reader: simpleitk
+normalization: CTNormalization
+intensity_properties:
+  mean: 99.48018646240234
+  std: 37.13841247558594
+  percentile_00_5: -15.0
+  percentile_99_5: 197.0
+use_mask_for_norm: false
+image_order: 3
+label_order: 1
+separate_axis_order: 0
+anisotropy_threshold: 3
+chunks:
+- 16
+- 64
+- 64
+blocks:
+- 16
+- 16
+- 16
+compression: LZ4HC
+compression_level: 8
+verify_reference: true
+case_paths: {}

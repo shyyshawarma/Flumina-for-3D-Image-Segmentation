@@ -1,0 +1,33 @@
+dataset: MAMA-MIA
+project_root: ../..
+raw_root: raw/MAMA-MIA
+output_root: data/MAMA-MIA
+split_root: splits/MAMA-MIA
+workers: 1
+source_manifest: manifest_1787253950256499168.csv
+verify_source_md5: true
+processing:
+  selected_phase: '0001'
+  expert_parent_id: syn64871175
+  label_values: [0, 1]
+  target_spacing_dhw: [2.0, 0.7, 0.7]
+  normalization_epsilon: 1.0e-8
+  image_order: 3
+  segmentation_order: 1
+  order_z: 0
+  anisotropy_threshold: 3.0
+storage:
+  backend: b2nd
+  blosc2_version: 4.1.2
+  codec: LZ4HC
+  clevel: 8
+  chunk_spatial: 64
+  block_spatial: 16
+  support_bitorder: little
+  foreground_dtype: uint32
+split_sha256:
+  train: addb865e628670ed88ec4c63e6f9515da96f5a093b7535227f426507bd99b51c
+  val: 0420a6c03c708f822a4f302325b5d579711842e0795d2db747aab0a4c3d74244
+  test: 4851e7e1b8e7c73609915e79f37e29590f2b0c61b7cc44fb1efb8c035d8cc7ba
+  labeled: b929987cc3e8ebb1d2f00ac45240a6e97bb12398aedb358667ba8dd8290469da
+  unlabeled: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
